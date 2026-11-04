@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
             {/* Pill Badge */}
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-electric-50 border border-electric-200/60 text-xs font-semibold text-electric-700 shadow-xs">
               <Sparkles className="w-3.5 h-3.5 text-electric-500" />
-              <span>Global Digital &amp; Creative Agency &bull; Web, AEO &amp; Brand</span>
+              <span>Global Digital &amp; Creative Agency &bull; Mumbai, India</span>
             </div>
 
             {/* Main Headline */}
@@ -34,13 +34,13 @@ export const Hero: React.FC = () => {
               </span>
             </h1>
 
-            {/* Supporting Description */}
+            {/* Supporting Copy */}
             <p className="text-lg sm:text-xl text-slate-700 max-w-2xl leading-relaxed font-normal">
-              Web development, AI search optimisation and creative solutions designed to help businesses build a stronger digital presence.
+              We build digital experiences, strengthen AI search visibility and create brands that stand out.
             </p>
 
             <p className="text-sm sm:text-base text-slate-500 max-w-2xl leading-relaxed">
-              UPMARK partners with ambitious businesses worldwide to develop powerful websites, improve visibility across AI-powered search and create distinctive brand identities.
+              UPMARK is an international digital agency based in Mumbai, India, partnering with ambitious businesses across the US, UK, Canada, Australia, UAE and worldwide.
             </p>
 
             {/* CTAs */}
@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
                 to="/services"
                 className="btn-secondary text-base py-4 px-6 font-semibold"
               >
-                <span>Explore Services</span>
+                <span>Explore Our Services</span>
               </Link>
             </div>
 
@@ -65,15 +65,15 @@ export const Hero: React.FC = () => {
             <div className="pt-4 border-t border-slate-200/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-600">
               <div className="flex items-center gap-2">
                 <Globe className="w-4 h-4 text-electric-500 shrink-0" />
-                <span>Working With Clients Worldwide</span>
+                <span>Serving Clients Internationally</span>
               </div>
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>3 Focused Disciplines</span>
+                <span>3 Dedicated Disciplines</span>
               </div>
               <div className="flex items-center gap-2">
                 <ShieldCheck className="w-4 h-4 text-navy-900 shrink-0" />
-                <span>Quality Technical Execution</span>
+                <span>Based in Mumbai, India</span>
               </div>
             </div>
           </div>

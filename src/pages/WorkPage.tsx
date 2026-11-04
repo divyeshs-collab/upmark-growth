@@ -2,10 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
 import { Sparkles, ArrowRight, ShieldCheck, CheckCircle2 } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 export const WorkPage: React.FC = () => {
   return (
     <div className="py-12 sm:py-16 space-y-16">
+      <SEO
+        title="Our Work | Digital Experiences & Creative Projects | UPMARK"
+        description="Explore selected digital, branding and creative projects by UPMARK."
+      />
       {/* Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-electric-50 border border-electric-200 text-xs font-semibold text-electric-700 mb-4">

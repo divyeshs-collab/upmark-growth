@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Globe, ArrowRight, ShieldCheck, Sparkles, Layers, Target } from 'lucide-react';
+import { Globe, ArrowRight, ShieldCheck, Sparkles, Workflow, MapPin } from 'lucide-react';
 
 export const AboutSnippet: React.FC = () => {
   return (
@@ -24,12 +24,12 @@ export const AboutSnippet: React.FC = () => {
               </span>
             </h2>
 
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
-              UPMARK is a global digital and creative agency based in India, partnering with businesses worldwide to develop websites, strengthen AI search visibility and create distinctive brands.
+            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
+              UPMARK is a digital and creative agency based in Mumbai, India, working with ambitious businesses worldwide.
             </p>
 
             <p className="text-sm text-slate-400 leading-relaxed max-w-2xl">
-              We operate without geographical boundaries, collaborating with clients across the United States, United Kingdom, Canada, Australia, the United Arab Emirates, India and other international markets. Our approach combines strategic clarity, clean engineering, and purposeful design.
+              We operate without geographical boundaries, partnering with clients across the United States, United Kingdom, Canada, Australia, the United Arab Emirates, and India. Our approach combines practical execution, creative design systems, and business-oriented solutions.
             </p>
 
             <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
@@ -59,23 +59,28 @@ export const AboutSnippet: React.FC = () => {
               <div className="p-3.5 bg-navy-950/80 rounded-xl border border-navy-800 space-y-1">
                 <span className="text-lightblue-300 font-bold block">1. Global Collaboration</span>
                 <p className="text-slate-400 leading-relaxed">
-                  Remote-first workflows, transparent documentation, and overlapping communication windows across international time zones.
+                  Remote-first workflows, structured documentation, and overlapping communication windows across international time zones.
                 </p>
               </div>
 
               <div className="p-3.5 bg-navy-950/80 rounded-xl border border-navy-800 space-y-1">
-                <span className="text-lightblue-300 font-bold block">2. Three Focused Disciplines</span>
+                <span className="text-lightblue-300 font-bold block">2. Practical Execution</span>
                 <p className="text-slate-400 leading-relaxed">
-                  Web Development, AEO Optimisation, and Creative Agency services designed to reinforce one another effectively.
+                  Web Development, AEO Optimisation, and Creative Agency services engineered to reinforce one another with zero bloated overhead.
                 </p>
               </div>
 
               <div className="p-3.5 bg-navy-950/80 rounded-xl border border-navy-800 space-y-1">
                 <span className="text-lightblue-300 font-bold block">3. Authentic Engagement</span>
                 <p className="text-slate-400 leading-relaxed">
-                  Zero fabricated metrics or exaggerated guarantees. We provide tailored scopes and realistic, professional execution.
+                  Zero fabricated metrics or exaggerated guarantees. We provide tailored scopes and realistic, professional execution from Mumbai, India.
                 </p>
               </div>
+            </div>
+
+            <div className="p-3 bg-navy-950/60 rounded-xl border border-navy-800 text-[11px] text-slate-400 flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-electric-400 shrink-0" />
+              <span>Headquartered in Mumbai, India &bull; Serving clients globally</span>
             </div>
           </div>
         </div>

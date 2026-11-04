@@ -40,15 +40,16 @@ export interface ProjectItem {
 
 export interface ProjectEnquiryData {
   fullName: string;
-  businessName: string;
   businessEmail: string;
   country: string;
+  countryCode: string;
+  phoneNumber: string;
+  companyName: string;
   websiteUrl?: string;
-  industry: string;
-  serviceRequired: 'Web Development' | 'AEO Optimisation' | 'Creative Agency' | 'Multiple Services';
+  servicesRequired: string[]; // Multi-choice: Web Development, AEO Optimisation, Creative Agency, Multiple Services
   projectDescription: string;
   approximateBudget?: string;
-  expectedTimeline: string;
-  phoneNumber?: string;
-  preferredCommunication: string;
+  expectedTimeline?: string;
+  preferredCommunication?: string;
+  privacyConsent: boolean;
 }

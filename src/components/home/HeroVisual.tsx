@@ -150,7 +150,7 @@ export const HeroVisual: React.FC = () => {
 
               <div className="text-xs text-slate-600 flex items-center justify-between">
                 <span>Tailored for international businesses &amp; startups.</span>
-                <Link to="/services/web-development" className="text-electric-600 font-semibold hover:underline flex items-center gap-1">
+                <Link to="/services#web-development" className="text-electric-600 font-semibold hover:underline flex items-center gap-1">
                   Learn More <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -207,7 +207,7 @@ export const HeroVisual: React.FC = () => {
 
               <div className="text-xs text-slate-600 flex items-center justify-between">
                 <span>Initial specialisation: Texas HVAC contractors.</span>
-                <Link to="/services/aeo-optimisation" className="text-electric-600 font-semibold hover:underline flex items-center gap-1">
+                <Link to="/services#aeo-optimisation" className="text-electric-600 font-semibold hover:underline flex items-center gap-1">
                   Learn More <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -270,7 +270,7 @@ export const HeroVisual: React.FC = () => {
 
               <div className="text-xs text-slate-600 flex items-center justify-between">
                 <span>Distinctive identity systems that build enduring equity.</span>
-                <Link to="/services/creative-agency" className="text-electric-600 font-semibold hover:underline flex items-center gap-1">
+                <Link to="/services#creative-agency" className="text-electric-600 font-semibold hover:underline flex items-center gap-1">
                   Learn More <ArrowUpRight className="w-3.5 h-3.5" />
                 </Link>
               </div>

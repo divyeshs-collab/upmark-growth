@@ -7,17 +7,23 @@ import {
   Palette, 
   ArrowRight, 
   Sparkles, 
-  ShieldCheck,
+  ShieldCheck, 
+  Clock, 
+  MapPin,
   CheckCircle2,
-  Clock,
-  Layers,
+  Workflow,
   Target
 } from 'lucide-react';
 import { WhyChooseUs } from '../components/home/WhyChooseUs';
+import { SEO } from '../components/common/SEO';
 
 export const AboutPage: React.FC = () => {
   return (
     <div className="py-12 sm:py-16 space-y-20">
+      <SEO
+        title="About UPMARK | Global Digital & Creative Agency"
+        description="Discover UPMARK, a Mumbai-based digital and creative agency working with businesses worldwide."
+      />
       {/* Hero Header */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-electric-50 border border-electric-200 text-xs font-semibold text-electric-700 mb-4">
@@ -30,8 +36,12 @@ export const AboutPage: React.FC = () => {
           <span className="text-electric-600">Brands Without Boundaries.</span>
         </h1>
 
-        <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-          UPMARK partners with ambitious businesses worldwide to develop powerful websites, improve visibility across AI-powered search and create distinctive brand identities.
+        <p className="text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
+          UPMARK is a digital and creative agency based in Mumbai, India, working with ambitious businesses worldwide.
+        </p>
+
+        <p className="text-base text-slate-500 max-w-2xl mx-auto mt-3">
+          We combine thoughtful strategy, modern engineering, and purposeful design to help international businesses build digital experiences, strengthen AI search visibility, and create brands that stand out.
         </p>
       </div>
 
@@ -46,33 +56,43 @@ export const AboutPage: React.FC = () => {
               </span>
 
               <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-white">
-                Headquartered in India. <br />
-                Partnering With Businesses Worldwide.
+                Based in Mumbai, India. <br />
+                Collaborating With Businesses Worldwide.
               </h2>
 
               <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                UPMARK is an independent digital and creative studio based in India, built specifically to serve businesses, entrepreneurs, startups, and organisations across international markets.
+                UPMARK is an independent digital and creative agency based in Mumbai, India, serving businesses internationally across the United States, United Kingdom, Canada, Australia, the United Arab Emirates, and India.
               </p>
 
               <p className="text-sm text-slate-400 leading-relaxed">
-                We believe that modern digital craftsmanship should have no geographic boundaries. By combining strategic clarity, technical rigor, and thoughtful design from our central base in India, we deliver high-caliber digital assets to clients across the United States, United Kingdom, Canada, Australia, the United Arab Emirates, India, and beyond.
+                We believe that first-class digital craftsmanship has no physical boundaries. From our central operational hub in Mumbai, we manage end-to-end web engineering, AEO search architecture, and visual creative systems through structured collaboration, transparent milestones, and fluid communication.
               </p>
 
-              <div className="space-y-3 pt-2">
+              <div className="space-y-4 pt-2">
                 <div className="flex items-start gap-3 text-sm text-slate-200">
-                  <Clock className="w-5 h-5 text-electric-400 shrink-0 mt-0.5" />
+                  <Globe className="w-5 h-5 text-electric-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block font-heading">Fluid International Collaboration:</strong>
+                    <strong className="text-white block font-heading">Global Collaboration:</strong>
                     <span className="text-slate-400 text-xs">
-                      We operate with organized communication windows overlapping key international time zones, ensuring seamless remote consultations, milestone updates, and prompt turnaround.
+                      We collaborate seamlessly with international teams through modern asynchronous documentation and overlapping video consultation windows.
                     </span>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-3 text-sm text-slate-200">
-                  <ShieldCheck className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+                  <Workflow className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
-                    <strong className="text-white block font-heading">Direct Asset Ownership:</strong>
+                    <strong className="text-white block font-heading">Practical Execution &amp; Business-Oriented Solutions:</strong>
+                    <span className="text-slate-400 text-xs">
+                      Every deliverable is grounded in business objectives, user comprehension, and measurable conversion efficiency rather than agency fluff.
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex items-start gap-3 text-sm text-slate-200">
+                  <ShieldCheck className="w-5 h-5 text-lightblue-300 shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-white block font-heading">Complete Asset Ownership:</strong>
                     <span className="text-slate-400 text-xs">
                       All web platforms, source codes, design tokens, vector brand guidelines, and structured schemas created for you belong 100% to your business upon completion.
                     </span>
@@ -84,7 +104,7 @@ export const AboutPage: React.FC = () => {
             {/* Right Col: 3 Disciplines Summary (Span 5) */}
             <div className="lg:col-span-5 bg-navy-900/90 rounded-2xl p-6 sm:p-8 border border-navy-800 space-y-4">
               <h3 className="font-heading text-lg font-bold text-white mb-2">
-                Our Three Core Pillars
+                Our Three Core Capabilities
               </h3>
 
               <div className="space-y-3 text-xs text-slate-300">
@@ -92,7 +112,7 @@ export const AboutPage: React.FC = () => {
                   <Code2 className="w-4 h-4 text-electric-400 shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white block mb-0.5">01 &bull; Web Development</strong>
-                    <span className="text-slate-400">Websites designed to turn your digital presence into a business asset.</span>
+                    <span className="text-slate-400">Websites designed to communicate value, build trust and help convert visitors into customers.</span>
                   </div>
                 </div>
 
@@ -100,7 +120,7 @@ export const AboutPage: React.FC = () => {
                   <Bot className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white block mb-0.5">02 &bull; AEO Optimisation</strong>
-                    <span className="text-slate-400">Making your business discoverable and well-referenced across AI-powered search.</span>
+                    <span className="text-slate-400">Answer Engine Optimisation helping businesses improve discoverability across AI-powered search.</span>
                   </div>
                 </div>
 
@@ -108,9 +128,14 @@ export const AboutPage: React.FC = () => {
                   <Palette className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
                   <div>
                     <strong className="text-white block mb-0.5">03 &bull; Creative Agency</strong>
-                    <span className="text-slate-400">Distinctive visual identities and compelling creative assets that build equity.</span>
+                    <span className="text-slate-400">Strategic brand identity systems, logo design and visual assets that create lasting equity.</span>
                   </div>
                 </div>
+              </div>
+
+              <div className="p-3 bg-navy-950/60 rounded-xl border border-navy-800 text-[11px] text-slate-400 flex items-center gap-2">
+                <MapPin className="w-4 h-4 text-electric-400 shrink-0" />
+                <span>Headquarters: Mumbai, India (Serving international clients)</span>
               </div>
             </div>
           </div>
@@ -120,13 +145,13 @@ export const AboutPage: React.FC = () => {
       {/* Why Choose UPMARK Differentiators */}
       <WhyChooseUs />
 
-      {/* Global Callout CTA */}
+      {/* Callout CTA */}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
         <h2 className="font-heading text-3xl font-extrabold text-navy-900">
-          Ready to build your next digital asset?
+          Have a project in mind?
         </h2>
         <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
-          Contact our agency team to discuss your project requirements, schedule a remote consultation, or request a custom quotation.
+          Let&apos;s build something meaningful for your business. Contact our team in Mumbai to schedule a remote consultation.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/contact" className="btn-primary py-3.5 px-7 text-sm font-semibold">
@@ -134,7 +159,7 @@ export const AboutPage: React.FC = () => {
             <ArrowRight className="w-4 h-4" />
           </Link>
           <Link to="/services" className="btn-secondary py-3.5 px-6 text-sm font-semibold">
-            <span>Explore Services</span>
+            <span>Explore Our Services</span>
           </Link>
         </div>
       </div>

@@ -18,14 +18,11 @@ export const FinalCta: React.FC = () => {
         </div>
 
         <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-          Let&apos;s Build <br className="hidden sm:inline" />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-400 via-lightblue-300 to-white">
-            Something Meaningful.
-          </span>
+          Have a project in mind?
         </h2>
 
         <p className="text-base sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Have an idea, a project or a business that needs a stronger digital presence? Let&apos;s talk.
+          Let&apos;s build something meaningful for your business.
         </p>
 
         {/* Buttons */}
@@ -42,7 +39,7 @@ export const FinalCta: React.FC = () => {
             to="/services"
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-navy-900 hover:bg-navy-800 border border-navy-700 transition-all text-base shadow-soft"
           >
-            <span>Explore Services</span>
+            <span>Explore Our Services</span>
           </Link>
         </div>
 
@@ -58,7 +55,7 @@ export const FinalCta: React.FC = () => {
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            <span>Transparent Milestone-Based Scopes</span>
+            <span>Based in Mumbai, India &bull; Serving Clients Globally</span>
           </div>
         </div>
       </div>

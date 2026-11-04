@@ -7,8 +7,7 @@ import {
   Palette, 
   ArrowRight, 
   Check, 
-  Sparkles,
-  Layers
+  Sparkles
 } from 'lucide-react';
 
 const iconMap: Record<string, React.ElementType> = {
@@ -71,7 +70,7 @@ export const ServicesOverview: React.FC = () => {
                     {service.shortDescription}
                   </p>
 
-                  {/* 3 to 5 Key Deliverables */}
+                  {/* Key Deliverables */}
                   <div className="pt-4 border-t border-slate-100 mb-6">
                     <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">
                       Key Deliverables:
@@ -87,13 +86,13 @@ export const ServicesOverview: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Bottom Action Link */}
+                {/* Bottom Action Link to Comprehensive Services Page */}
                 <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
                   <Link
-                    to={`/services/${service.slug}`}
+                    to={`/services#${service.slug}`}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-electric-600 hover:text-electric-700 group-hover:translate-x-0.5 transition-all"
                   >
-                    <span>Learn More About {service.title}</span>
+                    <span>Explore {service.title} Specifications</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>

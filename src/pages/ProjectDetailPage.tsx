@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   Eye
 } from 'lucide-react';
+import { SEO } from '../components/common/SEO';
 
 export const ProjectDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -20,6 +21,10 @@ export const ProjectDetailPage: React.FC = () => {
 
   return (
     <div className="py-12 sm:py-16">
+      <SEO
+        title={`${project.title} — Founder-Led Project | UPMARK`}
+        description={project.overview.slice(0, 155)}
+      />
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
         {/* Navigation Breadcrumb */}
         <div>
