@@ -8,44 +8,31 @@ export default {
     extend: {
       colors: {
         navy: {
-          950: '#071527',
-          900: '#0B1F3B', // Primary Navy
+          950: '#051329',
+          900: '#0B1F3B',
           800: '#122B4F',
           700: '#1E3A8A',
         },
         electric: {
-          400: '#3B82F6',
-          500: '#2563EB', // Electric Blue
+          400: '#3898FF',
+          500: '#0D5BEF',
           600: '#1D4ED8',
           700: '#1E40AF',
         },
-        lightblue: {
-          50: '#F0F7FF',
-          100: '#DBEAFE',
-          200: '#BFDBFE',
-          300: '#93C5FD',
-          400: '#60A5FA', // Light Blue
-        },
-        slateText: '#94A3B8', // Slate Grey
-        brandBg: '#F3F6FB', // Background
-        darkText: '#0F172A', // Dark text
+        slateText: '#64748B',
+        brandBg: '#F8FAFC',
+        darkText: '#051329',
       },
       fontFamily: {
-        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        heading: ['Montserrat', 'sans-serif'],
-      },
-      boxShadow: {
-        'soft': '0 4px 20px -2px rgba(11, 31, 59, 0.05)',
-        'premium': '0 10px 30px -4px rgba(11, 31, 59, 0.08), 0 4px 12px -2px rgba(11, 31, 59, 0.04)',
-        'card-hover': '0 20px 40px -10px rgba(37, 99, 235, 0.12), 0 8px 16px -4px rgba(11, 31, 59, 0.06)',
-        'glow': '0 0 25px rgba(37, 99, 235, 0.25)',
+        sans: ['DM Sans', 'Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
+        heading: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['JetBrains Mono', 'monospace'],
       },
       borderRadius: {
-        'xl': '1rem',
-        '2xl': '1.25rem',
-        '3xl': '1.5rem',
-      }
+        xl: '0.75rem',
+        '2xl': '1rem',
+      },
     },
   },
   plugins: [],
-}
+};

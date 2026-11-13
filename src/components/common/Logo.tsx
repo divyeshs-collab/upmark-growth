@@ -19,75 +19,75 @@ export const Logo: React.FC<LogoProps> = ({
   const isLight = variant === 'light';
 
   const iconSizes = {
-    sm: 'w-7 h-7',
-    md: 'w-9 h-9',
+    sm: 'w-8 h-8',
+    md: 'w-10 h-10',
     lg: 'w-11 h-11',
   };
 
   const titleSizes = {
     sm: 'text-lg',
     md: 'text-2xl',
-    lg: 'text-3xl',
+    lg: 'text-[26px]',
   };
 
   const taglineSizes = {
-    sm: 'text-[9px] tracking-[0.22em]',
-    md: 'text-[10px] tracking-[0.25em]',
-    lg: 'text-xs tracking-[0.28em]',
+    sm: 'text-[8px] tracking-[0.24em]',
+    md: 'text-[9px] tracking-[0.28em]',
+    lg: 'text-[10px] tracking-[0.3em]',
   };
 
   const logoContent = (
-    <div className={`inline-flex items-center gap-2.5 select-none ${className}`}>
-      {/* Dynamic Geometric Mark Icon */}
+    <div className={`inline-flex items-center gap-3 select-none ${className}`}>
+      {/* Official UPMARK Upward-U Geometric Mark (Matches Uploaded Logo) */}
       <div className={`relative flex items-center justify-center shrink-0 ${iconSizes[size]}`}>
-        <svg viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full drop-shadow-sm">
-          {/* Background Rounded Shield/Tile */}
-          <rect width="44" height="44" rx="10" fill={isLight ? '#FFFFFF' : '#0B1F3B'} />
-          
-          {/* Subtle Grid Accent */}
-          <path d="M10 22H34M22 10V34" stroke={isLight ? '#0B1F3B' : '#FFFFFF'} strokeOpacity="0.08" strokeWidth="1" strokeDasharray="2 2" />
+        <svg
+          viewBox="0 0 46 46"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full h-full"
+          aria-hidden="true"
+        >
+          <defs>
+            <linearGradient id="upmark-arrow-grad" x1="31" y1="2" x2="35" y2="43" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#0A52E6" />
+              <stop offset="55%" stopColor="#1D74F5" />
+              <stop offset="100%" stopColor="#3898FF" />
+            </linearGradient>
+          </defs>
 
-          {/* Stepped Performance Bars */}
-          <rect x="11" y="27" width="5" height="7" rx="1.5" fill={isLight ? '#0B1F3B' : '#60A5FA'} fillOpacity={isLight ? '0.4' : '0.6'} />
-          <rect x="18" y="21" width="5" height="13" rx="1.5" fill={isLight ? '#2563EB' : '#60A5FA'} />
-          <rect x="25" y="15" width="5" height="19" rx="1.5" fill={isLight ? '#0B1F3B' : '#2563EB'} />
+          {/* Left Midnight Navy Pillar */}
+          <path
+            d="M6 14L17 21.5V42.5C10.5 41 6 35.5 6 28.5V14Z"
+            fill={isLight ? '#93C5FD' : '#051329'}
+          />
 
-          {/* Upward Growth Arrow Trajectory */}
+          {/* Center Royal Blue Angled Facet */}
           <path
-            d="M13 25L21 17L27 21L33 11"
-            stroke={isLight ? '#2563EB' : '#FFFFFF'}
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            d="M17 34.5L28.5 25V42.8C26.2 43.3 23.8 43.5 21.5 43.3C19.9 43.1 18.4 42.9 17 42.5V34.5Z"
+            fill="#0D5BEF"
           />
-          {/* Arrow Tip */}
+
+          {/* Right Upward Arrow Pillar with Blue-to-Sky Gradient */}
           <path
-            d="M27 11H33V17"
-            stroke={isLight ? '#2563EB' : '#FFFFFF'}
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+            d="M21.5 14.5L40 2V28.5C40 36.2 35.2 41.5 28.5 42.8V14.5H21.5Z"
+            fill="url(#upmark-arrow-grad)"
           />
-          <circle cx="33" cy="11" r="2" fill={isLight ? '#2563EB' : '#60A5FA'} />
         </svg>
       </div>
 
-      {/* Typography: Wordmark + Tagline */}
+      {/* Wordmark: UPMARK + GROWTH & PERFORMANCE */}
       <div className="flex flex-col leading-none">
-        <div className="flex items-center gap-1">
-          <span
-            className={`font-heading font-extrabold tracking-tight ${titleSizes[size]} ${
-              isLight ? 'text-white' : 'text-navy-900'
-            }`}
-          >
-            UPMARK
-          </span>
-          <span className="w-1.5 h-1.5 rounded-full bg-electric-500 mb-0.5 inline-block"></span>
-        </div>
+        <span
+          className={`font-heading font-extrabold tracking-[0.03em] ${titleSizes[size]} ${
+            isLight ? 'text-white' : 'text-[#051329]'
+          }`}
+        >
+          UPMARK
+        </span>
         {showTagline && (
           <span
-            className={`font-sans font-semibold uppercase mt-0.5 ${taglineSizes[size]} ${
-              isLight ? 'text-lightblue-300/90' : 'text-slate-500'
+            className={`font-sans font-semibold uppercase mt-1 ${taglineSizes[size]} ${
+              isLight ? 'text-slate-400' : 'text-[#64748B]'
             }`}
           >
             Growth &amp; Performance
@@ -99,7 +99,11 @@ export const Logo: React.FC<LogoProps> = ({
 
   if (linkToHome) {
     return (
-      <Link to="/" className="group focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-500 rounded-lg">
+      <Link
+        to="/"
+        aria-label="UPMARK Home"
+        className="group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0D5BEF] focus-visible:ring-offset-2 rounded"
+      >
         {logoContent}
       </Link>
     );

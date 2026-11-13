@@ -1,69 +1,108 @@
 import React from 'react';
+import { SEO } from '../components/common/SEO';
 import { Hero } from '../components/home/Hero';
-import { ServicesOverview } from '../components/home/ServicesOverview';
-import { WhyChooseUs } from '../components/home/WhyChooseUs';
-import { ProcessSection } from '../components/home/ProcessSection';
-import { WorkPreview } from '../components/home/WorkPreview';
 import { AboutSnippet } from '../components/home/AboutSnippet';
+import { ServicesOverview } from '../components/home/ServicesOverview';
+import { WorkPreview } from '../components/home/WorkPreview';
+import { ProcessSection } from '../components/home/ProcessSection';
 import { ProjectEnquiryForm } from '../components/enquiry/ProjectEnquiryForm';
 import { FaqSection } from '../components/home/FaqSection';
-import { FinalCta } from '../components/home/FinalCta';
-import { Sparkles } from 'lucide-react';
-import { SEO } from '../components/common/SEO';
+import { SectionEyebrow } from '../components/common/BrandMotifs';
+import { faqData } from '../data/faqData';
 
 export const HomePage: React.FC = () => {
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqData.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  };
+
+  const websiteSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'UPMARK',
+    url: 'https://www.upmarkgrowth.com/',
+    description:
+      'UPMARK helps businesses build powerful digital experiences, improve search visibility and streamline operations through thoughtful design and technology.',
+  };
+
   return (
-    <div className="space-y-0">
+    <div>
       <SEO
-        title="UPMARK | Global Digital & Creative Agency"
-        description="UPMARK builds business websites, improves AI search visibility through AEO and creates distinctive brand experiences for businesses worldwide."
+        title="UPMARK | Digital Growth & Technology Agency | Web Development, E-Commerce, Custom Web Apps & Search Visibility"
+        description="UPMARK helps businesses build powerful digital experiences, improve search visibility (SEO, AEO, GEO) and streamline operations through custom websites, e-commerce, and business dashboards."
+        canonicalPath="/"
+        structuredData={[websiteSchema, faqSchema]}
       />
-      {/* SECTION 2 — HERO */}
+
+      {/* Section 01: Hero */}
       <Hero />
 
-      {/* SECTION 3 — SERVICES OVERVIEW (Exactly 3 Disciplines) */}
-      <ServicesOverview />
-
-      {/* SECTION 4 — WHY UPMARK (Differentiators) */}
-      <WhyChooseUs />
-
-      {/* SECTION 5 — OUR PROCESS (5 Steps: Discover, Strategise, Create, Implement, Refine) */}
-      <ProcessSection />
-
-      {/* SECTION 6 — FEATURED WORK (URBANYX and FETCHR founder-led projects) */}
-      <WorkPreview />
-
-      {/* SECTION 7 — ABOUT UPMARK (Mumbai, India & International Collaboration) */}
+      {/* Section 02: Introduction */}
       <AboutSnippet />
 
-      {/* SECTION 8 — PROJECT CTA & ENQUIRY */}
-      <section id="enquiry" className="py-20 lg:py-28 bg-brandBg border-b border-slate-200">
+      {/* Section 03: Services Overview */}
+      <ServicesOverview />
+
+      {/* Section 04: Selected Work & Live Demos */}
+      <WorkPreview />
+
+      {/* Section 05: How We Work */}
+      <ProcessSection />
+
+      {/* Section 06: Project Enquiry & Scope Builder */}
+      <section
+        id="project-funnel"
+        className="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200 scroll-mt-20"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-12 space-y-3">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-electric-50 border border-electric-200 text-xs font-semibold text-electric-700">
-              <Sparkles className="w-3.5 h-3.5 text-electric-500" />
-              <span>Direct Collaboration &bull; International Enquiries</span>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-4 space-y-5">
+              <SectionEyebrow label="Project Enquiry" variant="light" />
+              <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#051329] tracking-[-0.025em] leading-[1.15]">
+                Discuss Your Project
+              </h2>
+              <p className="text-base text-slate-600 leading-relaxed">
+                Tell us about your business, the website or system you want to build, and your goals. We will review your requirements and prepare a structured scope.
+              </p>
+
+              <div className="rounded-xl border border-slate-200 bg-white p-6 space-y-3 text-sm">
+                <div className="font-mono text-xs uppercase tracking-wider text-slate-500 font-semibold">
+                  What You Receive
+                </div>
+                <div className="space-y-2.5 text-[#051329]">
+                  <div className="flex items-center gap-2.5">
+                    <span className="font-mono text-xs font-bold text-[#0D5BEF]">01</span>
+                    <span>Recommended technical architecture</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <span className="font-mono text-xs font-bold text-[#0D5BEF]">02</span>
+                    <span>Clear deliverable breakdown</span>
+                  </div>
+                  <div className="flex items-center gap-2.5">
+                    <span className="font-mono text-xs font-bold text-[#0D5BEF]">03</span>
+                    <span>Timeline &amp; milestone quotation</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-navy-900 tracking-tight">
-              Have a project in mind?
-            </h2>
-
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-              Let&apos;s build something meaningful for your business. Tell us about your goals and requirements.
-            </p>
+            <div className="lg:col-span-8">
+              <ProjectEnquiryForm />
+            </div>
           </div>
-
-          {/* Genuine International Project Enquiry Form */}
-          <ProjectEnquiryForm />
         </div>
       </section>
 
-      {/* SECTION 9 — FAQ (7 Specific Questions) */}
+      {/* Section 07: FAQ */}
       <FaqSection />
-
-      {/* SECTION 10 — FINAL CTA BANNER */}
-      <FinalCta />
     </div>
   );
 };

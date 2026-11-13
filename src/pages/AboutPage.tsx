@@ -1,168 +1,169 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  Globe, 
-  Code2, 
-  Bot, 
-  Palette, 
-  ArrowRight, 
-  Sparkles, 
-  ShieldCheck, 
-  Clock, 
-  MapPin,
-  CheckCircle2,
-  Workflow,
-  Target
-} from 'lucide-react';
-import { WhyChooseUs } from '../components/home/WhyChooseUs';
 import { SEO } from '../components/common/SEO';
+import { servicesData } from '../data/servicesData';
+import { FinalCta } from '../components/home/FinalCta';
+import { SectionEyebrow } from '../components/common/BrandMotifs';
+import { IconArrowRight, IconCheck } from '../components/common/Icons';
 
 export const AboutPage: React.FC = () => {
   return (
-    <div className="py-12 sm:py-16 space-y-20">
+    <div>
       <SEO
-        title="About UPMARK | Global Digital & Creative Agency"
-        description="Discover UPMARK, a Mumbai-based digital and creative agency working with businesses worldwide."
+        title="About UPMARK | Digital Growth & Technology Agency"
+        description="UPMARK is a digital growth and technology agency focused on helping businesses create better digital experiences and build systems that support their growth."
+        canonicalPath="/about"
       />
-      {/* Hero Header */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-electric-50 border border-electric-200 text-xs font-semibold text-electric-700 mb-4">
-          <Sparkles className="w-3.5 h-3.5 text-electric-500" />
-          <span>Global Digital &amp; Creative Agency</span>
+
+      {/* Minimalist Hero Header */}
+      <section className="py-14 lg:py-20 bg-[#F8FAFC] border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl space-y-4">
+            <SectionEyebrow label="About UPMARK" variant="light" />
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#051329] tracking-[-0.025em] leading-[1.15]">
+              Digital Development &amp; Search Visibility Under One Roof
+            </h1>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
+              UPMARK is a digital growth and technology agency focused on helping businesses create better digital experiences and build systems that support their growth.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <h1 className="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold text-navy-900 tracking-tight mb-6">
-          Building Digital Experiences and <br className="hidden sm:inline" />
-          <span className="text-electric-600">Brands Without Boundaries.</span>
-        </h1>
-
-        <p className="text-lg sm:text-xl text-slate-700 max-w-3xl mx-auto leading-relaxed">
-          UPMARK is a digital and creative agency based in Mumbai, India, working with ambitious businesses worldwide.
-        </p>
-
-        <p className="text-base text-slate-500 max-w-2xl mx-auto mt-3">
-          We combine thoughtful strategy, modern engineering, and purposeful design to help international businesses build digital experiences, strengthen AI search visibility, and create brands that stand out.
-        </p>
-      </div>
-
-      {/* Global Agency Identity & Model */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-navy-950 text-white rounded-3xl p-8 sm:p-14 border border-navy-800 shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
-            {/* Left Col (Span 7) */}
-            <div className="lg:col-span-7 space-y-6">
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-electric-500/20 text-lightblue-300 border border-electric-400/30">
-                Agency Background &amp; Operations
-              </span>
-
-              <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-white">
-                Based in Mumbai, India. <br />
-                Collaborating With Businesses Worldwide.
+      {/* Core Principles */}
+      <section className="py-16 lg:py-24 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+            <div className="lg:col-span-5 space-y-3">
+              <SectionEyebrow label="Our Approach" variant="light" />
+              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#051329]">
+                Thoughtful Design, Clean Engineering, and Practical Business Systems
               </h2>
-
-              <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                UPMARK is an independent digital and creative agency based in Mumbai, India, serving businesses internationally across the United States, United Kingdom, Canada, Australia, the United Arab Emirates, and India.
-              </p>
-
-              <p className="text-sm text-slate-400 leading-relaxed">
-                We believe that first-class digital craftsmanship has no physical boundaries. From our central operational hub in Mumbai, we manage end-to-end web engineering, AEO search architecture, and visual creative systems through structured collaboration, transparent milestones, and fluid communication.
-              </p>
-
-              <div className="space-y-4 pt-2">
-                <div className="flex items-start gap-3 text-sm text-slate-200">
-                  <Globe className="w-5 h-5 text-electric-400 shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-white block font-heading">Global Collaboration:</strong>
-                    <span className="text-slate-400 text-xs">
-                      We collaborate seamlessly with international teams through modern asynchronous documentation and overlapping video consultation windows.
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 text-sm text-slate-200">
-                  <Workflow className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-white block font-heading">Practical Execution &amp; Business-Oriented Solutions:</strong>
-                    <span className="text-slate-400 text-xs">
-                      Every deliverable is grounded in business objectives, user comprehension, and measurable conversion efficiency rather than agency fluff.
-                    </span>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3 text-sm text-slate-200">
-                  <ShieldCheck className="w-5 h-5 text-lightblue-300 shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-white block font-heading">Complete Asset Ownership:</strong>
-                    <span className="text-slate-400 text-xs">
-                      All web platforms, source codes, design tokens, vector brand guidelines, and structured schemas created for you belong 100% to your business upon completion.
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
+            <div className="lg:col-span-7 space-y-4 text-base text-slate-600 leading-relaxed">
+              <p>
+                We work with businesses that want a stronger online presence, better search visibility, and practical digital solutions tailored to their operations.
+              </p>
+              <p>
+                Rather than separating website development from search performance and internal operations, we approach them as connected parts of a single commercial system, ensuring your website is fast, structured for organic and AI search discovery, and aligned with how your team manages leads and orders.
+              </p>
+            </div>
+          </div>
 
-            {/* Right Col: 3 Disciplines Summary (Span 5) */}
-            <div className="lg:col-span-5 bg-navy-900/90 rounded-2xl p-6 sm:p-8 border border-navy-800 space-y-4">
-              <h3 className="font-heading text-lg font-bold text-white mb-2">
-                Our Three Core Capabilities
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                num: '01',
+                title: 'Clarity Over Clutter',
+                body: 'Minimalist, editorial layouts that communicate what your business does clearly and guide visitors toward action.',
+              },
+              {
+                num: '02',
+                title: 'Tailored Business Tools',
+                body: 'Custom web applications, CRM portals, and dashboards engineered around your actual operational workflows.',
+              },
+              {
+                num: '03',
+                title: 'Search & AI Readiness',
+                body: 'Semantic HTML, Schema.org markup, and entity structure built for SEO, AEO, and GEO visibility.',
+              },
+              {
+                num: '04',
+                title: 'Transparent Delivery',
+                body: 'Written project scopes, clear milestones, and 100% client ownership of custom code upon completion.',
+              },
+            ].map((belief) => (
+              <div key={belief.num} className="rounded-xl border border-slate-200 bg-[#F8FAFC] p-6 space-y-2.5">
+                <div className="font-mono text-sm font-bold text-[#0D5BEF]">
+                  {belief.num}
+                </div>
+                <h3 className="font-heading text-lg font-bold text-[#051329]">
+                  {belief.title}
+                </h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  {belief.body}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          {/* Quality Standards */}
+          <div className="rounded-2xl bg-[#051329] text-white p-8 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <div className="lg:col-span-5 space-y-2">
+              <SectionEyebrow label="Quality Standards" variant="dark" />
+              <h3 className="font-heading text-2xl font-bold text-white">
+                Engineering &amp; Delivery Benchmarks
               </h3>
-
-              <div className="space-y-3 text-xs text-slate-300">
-                <div className="p-3.5 bg-navy-950/80 rounded-xl border border-navy-800 flex items-start gap-3">
-                  <Code2 className="w-4 h-4 text-electric-400 shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-white block mb-0.5">01 &bull; Web Development</strong>
-                    <span className="text-slate-400">Websites designed to communicate value, build trust and help convert visitors into customers.</span>
-                  </div>
+            </div>
+            <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                'Responsive across desktop, tablet & mobile',
+                'Semantic HTML5 & accessible contrast',
+                'Structured Schema.org JSON-LD markup',
+                'Full codebase handover & documentation',
+              ].map((item, idx) => (
+                <div key={idx} className="flex items-center gap-2.5 p-4 rounded-lg bg-slate-900 border border-slate-800 text-sm text-slate-200">
+                  <IconCheck className="w-4 h-4 text-[#3898FF] shrink-0" />
+                  <span>{item}</span>
                 </div>
-
-                <div className="p-3.5 bg-navy-950/80 rounded-xl border border-navy-800 flex items-start gap-3">
-                  <Bot className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-white block mb-0.5">02 &bull; AEO Optimisation</strong>
-                    <span className="text-slate-400">Answer Engine Optimisation helping businesses improve discoverability across AI-powered search.</span>
-                  </div>
-                </div>
-
-                <div className="p-3.5 bg-navy-950/80 rounded-xl border border-navy-800 flex items-start gap-3">
-                  <Palette className="w-4 h-4 text-purple-400 shrink-0 mt-0.5" />
-                  <div>
-                    <strong className="text-white block mb-0.5">03 &bull; Creative Agency</strong>
-                    <span className="text-slate-400">Strategic brand identity systems, logo design and visual assets that create lasting equity.</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-3 bg-navy-950/60 rounded-xl border border-navy-800 text-[11px] text-slate-400 flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-electric-400 shrink-0" />
-                <span>Headquarters: Mumbai, India (Serving international clients)</span>
-              </div>
+              ))}
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Why Choose UPMARK Differentiators */}
-      <WhyChooseUs />
+      {/* 7 Official Services Directory */}
+      <section className="py-16 lg:py-20 bg-[#F8FAFC] border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div className="space-y-2">
+              <SectionEyebrow label="Service Catalogue (01 to 07)" variant="light" />
+              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#051329]">
+                Seven Core Capabilities
+              </h2>
+            </div>
+            <Link
+              to="/services"
+              className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#051329] hover:text-[#0D5BEF]"
+            >
+              <span>View Full Services Page</span>
+              <IconArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
 
-      {/* Callout CTA */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
-        <h2 className="font-heading text-3xl font-extrabold text-navy-900">
-          Have a project in mind?
-        </h2>
-        <p className="text-sm sm:text-base text-slate-600 max-w-xl mx-auto">
-          Let&apos;s build something meaningful for your business. Contact our team in Mumbai to schedule a remote consultation.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/contact" className="btn-primary py-3.5 px-7 text-sm font-semibold">
-            <span>Start a Project</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link to="/services" className="btn-secondary py-3.5 px-6 text-sm font-semibold">
-            <span>Explore Our Services</span>
-          </Link>
+          <div className="rounded-xl overflow-hidden bg-white border border-slate-200 divide-y divide-slate-200">
+            {servicesData.map((s) => (
+              <div key={s.id} className="p-4 sm:px-6 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-[#F8FAFC]">
+                <div className="flex items-center gap-4">
+                  <span className="font-mono text-xs font-bold text-[#0D5BEF] w-6 shrink-0">
+                    {s.number}
+                  </span>
+                  <div>
+                    <Link
+                      to={`/services/${s.slug}`}
+                      className="font-heading font-bold text-base text-[#051329] hover:text-[#0D5BEF]"
+                    >
+                      {s.title}
+                    </Link>
+                    <p className="text-sm text-slate-500 hidden md:block">{s.summary}</p>
+                  </div>
+                </div>
+                <div className="flex items-center shrink-0">
+                  <Link
+                    to={`/services/${s.slug}`}
+                    className="text-xs font-semibold text-slate-600 hover:text-[#0D5BEF] inline-flex items-center gap-1"
+                  >
+                    <span>View Details</span>
+                    <IconArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
+
+      <FinalCta />
     </div>
   );
 };

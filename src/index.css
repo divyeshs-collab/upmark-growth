@@ -3,77 +3,104 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  :root {
+    --bg-primary: #FFFFFF;
+    --bg-secondary: #F8FAFC;
+    --text-primary: #051329;
+    --text-secondary: #475569;
+    --brand-navy: #051329;
+    --brand-blue: #0D5BEF;
+    --brand-sky: #3898FF;
+    --border-subtle: #E2E8F0;
   }
 
-  h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: -0.02em;
+  html {
+    scroll-behavior: smooth;
+    background-color: #FFFFFF;
+    color: #051329;
+    font-family: 'DM Sans', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    background-color: #F3F6FB;
-    color: #0F172A;
-    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF;
+    color: #051329;
+    overflow-x: hidden;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    letter-spacing: -0.025em;
+    color: #051329;
+  }
+
+  ::selection {
+    background-color: #0D5BEF;
+    color: #FFFFFF;
   }
 }
 
-@layer components {
-  .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white bg-electric-500 hover:bg-electric-600 transition-all duration-200 shadow-md hover:shadow-glow active:scale-[0.98] text-sm md:text-base;
-  }
-
-  .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-navy-900 bg-white hover:bg-slate-50 border border-slate-200 hover:border-slate-300 transition-all duration-200 shadow-soft active:scale-[0.98] text-sm md:text-base;
-  }
-
-  .btn-dark {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-white bg-navy-900 hover:bg-navy-800 transition-all duration-200 shadow-soft active:scale-[0.98] text-sm md:text-base;
-  }
-
-  .badge-tag {
-    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wide uppercase;
-  }
-
-  .glass-card {
-    @apply bg-white/90 backdrop-blur-md border border-slate-200/80 rounded-2xl shadow-soft transition-all duration-300;
-  }
-
-  .glass-card-hover {
-    @apply hover:border-electric-400/40 hover:shadow-card-hover hover:-translate-y-1;
-  }
-
-  .container-custom {
-    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
-  }
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #FFFFFF;
+  background-color: #051329;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
+.btn-primary:hover {
+  background-color: #0D5BEF;
 }
 
-::-webkit-scrollbar-track {
-  background: #F3F6FB;
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #FFFFFF;
+  background-color: #0D5BEF;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 4px;
+.btn-accent:hover {
+  background-color: #1D4ED8;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #051329;
+  background-color: #FFFFFF;
+  border: 1px solid #CBD5E1;
 }
 
-/* Restrained animations */
-@keyframes subtlePulse {
-  0%, 100% { opacity: 0.85; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.02); }
+.btn-secondary:hover {
+  border-color: #051329;
+  background-color: #F8FAFC;
 }
 
-.animate-subtle-pulse {
-  animation: subtlePulse 4s infinite ease-in-out;
+.editorial-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 0.75rem;
 }

@@ -1,61 +1,36 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Globe, CheckCircle2, ShieldCheck } from 'lucide-react';
+import { SectionEyebrow } from '../common/BrandMotifs';
+import { IconArrowUpRight, IconArrowRight } from '../common/Icons';
 
 export const FinalCta: React.FC = () => {
   return (
-    <section className="py-20 lg:py-28 bg-navy-950 text-white relative overflow-hidden">
-      {/* Background Glows */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
-        <div className="absolute -top-32 left-1/4 w-96 h-96 bg-electric-600/20 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-32 right-1/4 w-96 h-96 bg-lightblue-400/10 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-900 border border-navy-700 text-xs font-semibold text-lightblue-300">
-          <Globe className="w-3.5 h-3.5 text-electric-400" />
-          <span>Building Digital Experiences and Brands Without Boundaries</span>
-        </div>
-
-        <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-tight">
-          Have a project in mind?
-        </h2>
-
-        <p className="text-base sm:text-xl text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          Let&apos;s build something meaningful for your business.
-        </p>
-
-        {/* Buttons */}
-        <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link
-            to="/contact"
-            className="btn-primary w-full sm:w-auto text-base py-4 px-8 shadow-glow bg-electric-500 hover:bg-electric-600 font-semibold"
-          >
-            <span>Start a Project</span>
-            <ArrowRight className="w-4 h-4" />
-          </Link>
-
-          <Link
-            to="/services"
-            className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl font-semibold text-white bg-navy-900 hover:bg-navy-800 border border-navy-700 transition-all text-base shadow-soft"
-          >
-            <span>Explore Our Services</span>
-          </Link>
-        </div>
-
-        {/* Global Transparency Strip */}
-        <div className="pt-6 border-t border-navy-900 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            <span>Responsive Global Collaboration</span>
+    <section className="bg-[#051329] text-white py-16 lg:py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-8 space-y-4">
+            <SectionEyebrow label="Start a Conversation" variant="dark" />
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold tracking-[-0.025em] text-white leading-[1.15]">
+              Ready to Build or Improve Your Digital Presence?
+            </h2>
+            <p className="text-base sm:text-lg text-slate-300 max-w-2xl leading-relaxed">
+              Tell us about your website, e-commerce store, custom web application, or search visibility goals and we will prepare a clear written scope.
+            </p>
           </div>
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-electric-400" />
-            <span>Strict Project Confidentiality</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-            <span>Based in Mumbai, India &bull; Serving Clients Globally</span>
+
+          <div className="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center lg:items-end gap-3.5">
+            <Link to="/contact" className="btn-accent py-3.5 px-7 text-sm justify-center">
+              <span>Discuss Your Project</span>
+              <IconArrowUpRight className="w-4 h-4" />
+            </Link>
+
+            <Link
+              to="/services"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-lg border border-slate-700 hover:border-white text-white text-sm font-semibold"
+            >
+              <span>Explore Our Services</span>
+              <IconArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>

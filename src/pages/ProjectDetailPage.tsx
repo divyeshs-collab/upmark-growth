@@ -1,15 +1,9 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { projectsData } from '../data/projectsData';
-import { 
-  ChevronLeft, 
-  ArrowRight, 
-  Sparkles, 
-  CheckCircle2, 
-  ShieldCheck,
-  Eye
-} from 'lucide-react';
 import { SEO } from '../components/common/SEO';
+import { projectsData } from '../data/projectsData';
+import { ProjectInteractiveDemo } from '../components/work/ProjectInteractiveDemo';
+import { IconArrowLeft, IconArrowUpRight, IconArrowRight } from '../components/common/Icons';
 
 export const ProjectDetailPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -19,201 +13,206 @@ export const ProjectDetailPage: React.FC = () => {
     return <Navigate to="/work" replace />;
   }
 
+  const otherProjects = projectsData.filter((p) => p.id !== project.id).slice(0, 2);
+
   return (
-    <div className="py-12 sm:py-16">
+    <div className="bg-[#F8FAFC]">
       <SEO
-        title={`${project.title} — Founder-Led Project | UPMARK`}
-        description={project.overview.slice(0, 155)}
+        title={`${project.title} | ${project.label} | UPMARK`}
+        description={project.summary}
+        canonicalPath={`/work/${project.slug}`}
       />
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-        {/* Navigation Breadcrumb */}
-        <div>
-          <Link
-            to="/work"
-            className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-navy-900 transition-colors"
-          >
-            <ChevronLeft className="w-4 h-4" />
-            <span>Back to All Work</span>
-          </Link>
-        </div>
 
-        {/* Project Hero Header */}
-        <div
-          className={`rounded-3xl p-8 sm:p-14 text-white bg-gradient-to-br ${
-            project.id === 'urbanyx'
-              ? 'from-navy-950 via-slate-900 to-navy-900'
-              : 'from-navy-950 via-electric-950 to-navy-900'
-          } shadow-xl border border-navy-800 space-y-6 relative overflow-hidden`}
-        >
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/10 backdrop-blur-md text-lightblue-200 border border-white/20">
-              <span className="w-2 h-2 rounded-full bg-electric-400"></span>
-              Founder-led projects
-            </span>
+      {/* Top Header */}
+      <section className="py-12 lg:py-16 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4">
+            <Link
+              to="/work"
+              className="inline-flex items-center gap-2 font-mono text-xs uppercase tracking-[0.14em] text-slate-500 hover:text-[#051329]"
+            >
+              <IconArrowLeft className="w-4 h-4" />
+              <span>All Portfolio Projects</span>
+            </Link>
 
-            <span className="text-xs font-mono text-slate-300">
-              Category: {project.category}
-            </span>
-          </div>
-
-          <h1 className="font-heading text-4xl sm:text-6xl font-extrabold tracking-tight">
-            {project.title}
-          </h1>
-
-          <p className="text-xl sm:text-2xl text-slate-200 font-medium max-w-2xl">
-            {project.subtitle}
-          </p>
-
-          <p className="text-sm text-slate-400 max-w-3xl">
-            {project.tagline}
-          </p>
-
-          <div className="pt-4 flex flex-wrap gap-2">
-            {project.servicesDemonstrated.map((s, idx) => (
-              <span
-                key={idx}
-                className="px-3 py-1 rounded-full bg-white/10 backdrop-blur-sm text-xs font-medium text-slate-200 border border-white/10"
-              >
-                {s}
+            <div className="flex items-center gap-3">
+              <span className="font-mono text-xs font-bold text-[#0D5BEF]">
+                PROJECT {project.number}
               </span>
-            ))}
-          </div>
-        </div>
-
-        {/* Project Case Study Deep-Dive */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-          {/* Main Case Study Text (Span 8) */}
-          <div className="lg:col-span-8 space-y-8">
-            <div className="bg-white rounded-2xl p-7 sm:p-9 border border-slate-200/90 shadow-soft space-y-4">
-              <h2 className="font-heading text-xl font-bold text-navy-900">
-                Project Overview &amp; Concept
-              </h2>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                {project.overview}
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-7 sm:p-9 border border-slate-200/90 shadow-soft space-y-4">
-              <h2 className="font-heading text-xl font-bold text-navy-900">
-                The Core Challenge
-              </h2>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                {project.challenge}
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-7 sm:p-9 border border-slate-200/90 shadow-soft space-y-4">
-              <h2 className="font-heading text-xl font-bold text-navy-900">
-                Strategic Framework &amp; Positioning
-              </h2>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                {project.strategy}
-              </p>
-            </div>
-
-            <div className="bg-white rounded-2xl p-7 sm:p-9 border border-slate-200/90 shadow-soft space-y-4">
-              <h2 className="font-heading text-xl font-bold text-navy-900">
-                Creative &amp; Technical Execution
-              </h2>
-              <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                {project.creativeExecution}
-              </p>
+              <span className="font-mono text-xs uppercase tracking-[0.12em] px-2.5 py-0.5 rounded bg-[#F8FAFC] text-[#051329] border border-slate-200">
+                {project.label}
+              </span>
             </div>
           </div>
 
-          {/* Sidebar Deliverables (Span 4) */}
-          <div className="lg:col-span-4 space-y-6">
-            <div className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-soft space-y-4">
-              <h3 className="font-heading text-base font-bold text-navy-900 uppercase tracking-wider text-xs">
-                Key Deliverables Produced
-              </h3>
-
-              <ul className="space-y-3">
-                {project.deliverables.map((deliv, idx) => (
-                  <li key={idx} className="text-xs text-slate-700 flex items-start gap-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                    <span>{deliv}</span>
-                  </li>
-                ))}
-              </ul>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+            <div className="lg:col-span-8 space-y-4">
+              <div className="font-mono text-xs uppercase tracking-[0.14em] text-slate-500">
+                {project.clientContext} &bull; {project.category}
+              </div>
+              <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#051329] tracking-[-0.03em] leading-[1.1]">
+                {project.title}
+              </h1>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                {project.subtitle}
+              </p>
             </div>
 
-            <div className="bg-navy-950 text-white rounded-2xl p-6 space-y-4">
-              <h3 className="font-heading font-bold text-base">
-                Build this caliber of digital experience for your brand
-              </h3>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                Whether you need bespoke web development, AEO setup, or strategic creative direction, our agency delivers this exact standard.
-              </p>
-              <Link
-                to="/contact"
-                className="btn-primary w-full py-3 text-xs font-bold justify-center"
-              >
-                <span>Start a Project</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+            <div className="lg:col-span-4 flex lg:justify-end">
+              <Link to="/contact" className="btn-primary py-3.5 px-7 text-sm">
+                <span>Discuss a Similar Project</span>
+                <IconArrowUpRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Visual Showcase Gallery */}
-        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200/90 shadow-soft space-y-8">
-          <div className="flex items-center justify-between">
+      {/* Interactive Demo */}
+      <section className="py-12 lg:py-16 border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>
-              <h2 className="font-heading text-2xl font-extrabold text-navy-900">
-                Visual Showcase Gallery
+              <span className="font-mono text-xs uppercase tracking-[0.14em] text-[#0D5BEF] font-semibold">
+                Interactive Interface Walkthrough
+              </span>
+              <h2 className="font-heading text-xl sm:text-2xl font-bold text-[#051329]">
+                Use the tabs inside the frame below to inspect each module
               </h2>
-              <p className="text-xs text-slate-500 mt-1">
-                Design systems, responsive components, and digital artwork.
-              </p>
             </div>
-            <span className="text-xs font-mono text-slate-400">
-              {project.gallery.length} Modules
+            <span className="font-mono text-xs text-slate-500">
+              {project.label}
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {project.gallery.map((item, gIdx) => (
-              <div
-                key={gIdx}
-                className="rounded-2xl border border-slate-200 overflow-hidden bg-slate-50 flex flex-col justify-between hover:border-electric-300 transition-all duration-200"
-              >
-                <div
-                  className={`h-48 bg-gradient-to-br ${
-                    item.previewBg || 'from-navy-900 to-slate-800'
-                  } p-6 flex flex-col justify-between text-white relative`}
-                >
-                  <div className="flex items-center justify-between">
-                    <span className="px-2.5 py-1 rounded bg-black/40 backdrop-blur-sm text-[10px] font-mono text-lightblue-300 border border-white/10">
-                      {item.tag}
-                    </span>
-                    <Eye className="w-4 h-4 text-slate-300" />
-                  </div>
+          <ProjectInteractiveDemo demoType={project.demoType} />
+        </div>
+      </section>
 
-                  <div>
-                    <h4 className="font-heading font-bold text-lg text-white">
-                      {item.title}
-                    </h4>
-                  </div>
+      {/* Case Study Details */}
+      <section className="py-16 lg:py-24 bg-white border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div className="lg:col-span-7 space-y-10">
+              <div className="space-y-3">
+                <div className="font-mono text-xs uppercase tracking-[0.14em] text-[#0D5BEF] font-semibold">
+                  01. Project Overview
                 </div>
-
-                <div className="p-5">
-                  <p className="text-xs text-slate-600 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
+                <h2 className="font-heading text-2xl font-bold text-[#051329]">
+                  Concept &amp; Scope
+                </h2>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  {project.overview}
+                </p>
               </div>
+
+              <div className="space-y-3 pt-6 border-t border-slate-200">
+                <div className="font-mono text-xs uppercase tracking-[0.14em] text-[#0D5BEF] font-semibold">
+                  02. Commercial Problem
+                </div>
+                <h2 className="font-heading text-2xl font-bold text-[#051329]">
+                  Business Context
+                </h2>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  {project.businessContext}
+                </p>
+              </div>
+
+              <div className="space-y-3 pt-6 border-t border-slate-200">
+                <div className="font-mono text-xs uppercase tracking-[0.14em] text-[#0D5BEF] font-semibold">
+                  03. System Design
+                </div>
+                <h2 className="font-heading text-2xl font-bold text-[#051329]">
+                  Architecture &amp; Technical Approach
+                </h2>
+                <p className="text-base text-slate-600 leading-relaxed">
+                  {project.architectureAndApproach}
+                </p>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 space-y-6">
+              <div className="rounded-xl bg-[#F8FAFC] border border-slate-200 p-7 space-y-5">
+                <div className="font-mono text-xs uppercase tracking-[0.14em] text-[#0D5BEF] font-semibold">
+                  Demonstrated Capabilities
+                </div>
+                <ul className="space-y-3">
+                  {project.keyCapabilities.map((cap, idx) => (
+                    <li key={idx} className="text-sm text-[#051329] flex items-start gap-2.5">
+                      <span className="font-mono text-xs font-bold text-[#0D5BEF] mt-0.5">0{idx + 1}</span>
+                      <span>{cap}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="rounded-xl bg-[#F8FAFC] border border-slate-200 p-7 space-y-5">
+                <div className="font-mono text-xs uppercase tracking-[0.14em] text-[#0D5BEF] font-semibold">
+                  Deliverables Illustrated
+                </div>
+                <ul className="space-y-2.5">
+                  {project.deliverables.map((deliv, idx) => (
+                    <li key={idx} className="text-sm text-slate-600 flex items-start gap-2.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#0D5BEF] mt-2 shrink-0"></span>
+                      <span>{deliv}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="p-5 rounded-xl border border-slate-200 bg-white text-sm text-slate-600 leading-relaxed">
+                <strong className="text-[#051329] block mb-1">Transparency Note:</strong>
+                This project is presented as a {project.label.toLowerCase()} to illustrate UPMARK&apos;s interface design, engineering, and information architecture standards. No fabricated client statistics are claimed.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* More Portfolio Projects */}
+      <section className="py-16 bg-[#F8FAFC] border-b border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+          <div className="flex items-center justify-between">
+            <h2 className="font-heading text-xl sm:text-2xl font-bold text-[#051329]">
+              More Demonstration Projects
+            </h2>
+            <Link
+              to="/work"
+              className="font-mono text-xs uppercase tracking-[0.14em] text-[#051329] hover:text-[#0D5BEF] inline-flex items-center gap-1"
+            >
+              <span>All Work</span>
+              <IconArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {otherProjects.map((other) => (
+              <Link
+                key={other.id}
+                to={`/work/${other.slug}`}
+                className="rounded-xl bg-white border border-slate-200 p-7 hover:border-[#0D5BEF] flex flex-col justify-between space-y-4 group"
+              >
+                <div className="space-y-2">
+                  <div className="flex items-center justify-between font-mono text-xs">
+                    <span className="font-bold text-[#0D5BEF]">
+                      PROJECT {other.number}
+                    </span>
+                    <span className="text-xs text-slate-500">{other.label}</span>
+                  </div>
+                  <h3 className="font-heading text-xl font-bold text-[#051329] group-hover:text-[#0D5BEF]">
+                    {other.title}
+                  </h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{other.summary}</p>
+                </div>
+                <span className="font-mono text-xs uppercase tracking-[0.12em] text-[#0D5BEF] font-semibold inline-flex items-center gap-1">
+                  <span>View Project</span>
+                  <IconArrowUpRight className="w-4 h-4" />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
-
-        {/* Portfolio Integrity Note */}
-        <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 text-center text-xs text-slate-500">
-          <p>
-            * Transparency Disclosure: {project.title} is a founder-led project representing brand strategy, web design, and digital architecture capability. In accordance with UPMARK’s integrity guidelines, no fictitious revenue or fabricated customer metrics are presented.
-          </p>
-        </div>
-      </div>
+      </section>
     </div>
   );
 };

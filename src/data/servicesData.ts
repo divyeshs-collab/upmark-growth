@@ -2,103 +2,331 @@ import { ServiceItem } from '../types';
 
 export const servicesData: ServiceItem[] = [
   {
-    id: 'web-development',
-    slug: 'web-development',
-    title: 'Web Development',
-    positioning: 'Build powerful digital experiences designed around your business.',
-    shortDescription: 'We create modern, responsive and business-focused digital experiences that communicate value, build trust and help convert visitors into customers.',
-    fullDescription: 'Your website is the foundation of your digital credibility. We design and develop custom, high-performance web experiences engineered to articulate your value proposition clearly, establish confidence with international prospects, and drive qualified business enquiries.',
-    iconName: 'Code2',
+    id: 'website-development',
+    number: '01',
+    code: '01',
+    slug: 'website-development',
+    title: 'Website Development',
+    shortTitle: 'Website Development',
+    category: 'Development & Engineering',
+    summary: 'Build professional digital experiences tailored to business requirements.',
+    description:
+      'A business website is often the primary point of evaluation for prospective clients, partners, and buyers. We architect, design, and develop responsive websites that communicate commercial authority, clarify complex value propositions, and guide visitors toward meaningful business enquiries.',
+    businessProblem: {
+      headline: 'Outdated, template-driven websites undermine commercial credibility.',
+      description:
+        'Many established businesses outgrow their digital presence. Slow load times, fragmented navigation, and generic templates fail to reflect the actual quality of the organisation, causing qualified prospects to leave before initiating contact.',
+      painPoints: [
+        'Generic templates that look indistinguishable from competitors and fail to communicate positioning.',
+        'Poor mobile responsiveness and slow page rendering that increase visitor drop-off.',
+        'Unclear information architecture that buries core services and conversion pathways.',
+      ],
+    },
     deliverables: [
-      'Business websites',
+      'Business website development',
+      'Corporate websites',
+      'Landing pages',
       'Custom website development',
-      'Landing page development',
-      'E-commerce websites',
       'Website redesign',
-      'UI/UX design',
-      'Responsive development',
-      'Website performance optimisation',
-      'Website maintenance where agreed in project scope'
+      'Responsive website development',
     ],
-    keyBenefits: [
-      'Built around business goals rather than generic, bloated templates',
-      'Fast, accessible and responsive across desktop, tablet and mobile devices',
-      'Clean modern technology stack built for longevity, ease of updates and security'
+    intendedCustomers: [
+      'Service businesses and B2B organisations establishing a credible digital flagship',
+      'International SMEs and corporate teams modernising an outdated web presence',
+      'Startups and growing companies launching new products, regional campaigns, or dedicated landing pages',
     ],
-    idealFor: [
-      'Established businesses upgrading an outdated online presence',
-      'High-growth startups launching digital products or SaaS solutions',
-      'Brands needing high-converting marketing landing pages or modern e-commerce storefronts'
+    technicalCapabilities: [
+      'React & TypeScript',
+      'Next.js Architecture',
+      'Semantic HTML5',
+      'Tailwind CSS Systems',
+      'CMS Integration',
+      'Core Web Vitals Optimisation',
     ],
-    toolsUsed: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'Next.js', 'Figma', 'Web Standards'],
-    visualDirection: 'Desktop website mockups, mobile website mockups, e-commerce interfaces, landing page examples.'
+    visualType: 'website-architecture',
   },
   {
-    id: 'aeo-optimisation',
-    slug: 'aeo-optimisation',
-    title: 'AEO Optimisation',
-    fullName: 'Answer Engine Optimisation',
-    positioning: 'Strengthen your visibility across AI-powered search experiences.',
-    shortDescription: 'We position your business as a trusted source across modern AI search engines by structuring entity data, answer-focused content and technical crawlability.',
-    fullDescription: 'Search behavior is undergoing a generational shift toward conversational AI engines. Answer Engine Optimisation (AEO) is an evolving technical discipline focused on helping AI engines—such as ChatGPT Search, Google AI search experiences, and Microsoft Bing—understand your business entity, crawl your core information, and cite your answers when prospects inquire about your solutions.',
-    iconName: 'Bot',
+    id: 'ecommerce-development',
+    number: '02',
+    code: '02',
+    slug: 'ecommerce-development',
+    title: 'E-commerce Development',
+    shortTitle: 'E-commerce Development',
+    category: 'Development & Engineering',
+    summary: 'Create online shopping experiences that make it easier for businesses to sell their products.',
+    description:
+      'Effective e-commerce requires clarity in product presentation and zero friction from discovery to checkout. We build and refine online stores that organize complex product catalogues cleanly, integrate reliable payment and inventory workflows, and perform consistently on mobile and desktop devices.',
+    businessProblem: {
+      headline: 'Cluttered storefronts and checkout friction directly reduce completed orders.',
+      description:
+        'Online retail brands frequently lose customers during product discovery and checkout due to confusing variant selection, slow catalogue filtering, disconnected inventory records, or cumbersome mobile payment flows.',
+      painPoints: [
+        'Disorganised product catalogues and filtering systems that make finding items difficult.',
+        'High cart abandonment caused by multi-step checkout friction or unclear shipping and payment states.',
+        'Manual inventory reconciliation between the online storefront and operational stock records.',
+      ],
+    },
+    deliverables: [
+      'E-commerce website development',
+      'Online store development',
+      'Shopify development',
+      'Product catalogue implementation',
+      'Shopping cart and checkout integration',
+      'Payment gateway integration',
+      'Inventory integration',
+      'E-commerce redesign',
+    ],
+    intendedCustomers: [
+      'Direct-to-consumer (DTC) and retail brands launching or redesigning their online storefront',
+      'Product businesses migrating from offline or manual ordering to structured digital commerce',
+      'Established merchants needing cleaner catalogue structure, payment integration, or mobile checkout improvements',
+    ],
+    technicalCapabilities: [
+      'Shopify Storefronts',
+      'Custom Commerce UI',
+      'Stripe & Payment Gateways',
+      'Structured Product Catalogues',
+      'Cart & Checkout Flows',
+      'Inventory Sync APIs',
+    ],
+    visualType: 'ecommerce-system',
+  },
+  {
+    id: 'custom-web-applications',
+    number: '03',
+    code: '03',
+    slug: 'custom-web-applications',
+    title: 'Custom Web Applications & Business Dashboards',
+    shortTitle: 'Web Apps & Dashboards',
+    category: 'Development & Engineering',
+    summary: 'Build digital systems tailored to business operations.',
+    description:
+      'Off-the-shelf software often forces businesses to adapt their operations around rigid tools or fragmented spreadsheets. We engineer custom web applications, internal management portals, and operational dashboards designed around how your team actually works, tracks data, and serves customers.',
+    businessProblem: {
+      headline: 'Disconnected spreadsheets and rigid software create operational bottlenecks.',
+      description:
+        'As transaction volume and team coordination grow, relying on manual spreadsheets or disconnected tools leads to duplicated data entry, delayed reporting, inventory inaccuracies, and poor visibility into daily commercial performance.',
+      painPoints: [
+        'Critical customer, order, and inventory data scattered across incompatible spreadsheets.',
+        'Lack of real-time visibility into sales pipelines, stock levels, and purchasing workflows.',
+        'Manual booking, scheduling, or administrative tasks that consume valuable staff hours.',
+      ],
+    },
+    deliverables: [
+      'CRM systems',
+      'Inventory management systems',
+      'Sales and purchase management systems',
+      'Business analytics dashboards',
+      'Admin dashboards',
+      'Customer management systems',
+      'Booking and appointment systems',
+      'Internal business management tools',
+      'Custom web applications',
+    ],
+    intendedCustomers: [
+      'SMEs and operational businesses replacing manual spreadsheets with centralized web software',
+      'Service providers needing custom booking, scheduling, or client management portals',
+      'Commercial teams requiring unified visibility across inventory, sales, purchasing, and reporting',
+    ],
+    technicalCapabilities: [
+      'Role-Based Admin Portals',
+      'Data Visualization & Reporting',
+      'REST API Integration',
+      'State & Workflow Management',
+      'Relational Data Modelling',
+      'Responsive Operational UI',
+    ],
+    visualType: 'business-dashboard',
+  },
+  {
+    id: 'seo',
+    number: '04',
+    code: '04',
+    slug: 'seo',
+    title: 'Search Engine Optimisation (SEO)',
+    shortTitle: 'SEO',
+    category: 'Search & AI Visibility',
+    summary: 'Help businesses improve their organic search visibility.',
+    description:
+      'Sustainable organic search visibility begins with sound technical foundations and well-structured content that directly addresses commercial search intent. We execute methodical technical audits, site architecture improvements, and on-page optimisation to help prospective customers find your business when searching for your services.',
+    businessProblem: {
+      headline: 'Strong businesses remain unseen when search engines cannot properly parse or prioritise their pages.',
+      description:
+        'Many websites suffer from structural crawl issues, unaligned page hierarchy, thin service descriptions, and missing metadata, allowing less capable competitors to capture high-intent organic search traffic.',
+      painPoints: [
+        'Technical indexing barriers, slow page templates, and broken internal linking structures.',
+        'Service and product pages that fail to align with how commercial buyers actually search.',
+        'Weak local and regional search signals for businesses serving specific geographic markets.',
+      ],
+    },
+    deliverables: [
+      'Technical SEO audits',
+      'On-page SEO',
+      'Keyword research',
+      'Competitor analysis',
+      'Website structure optimisation',
+      'Metadata optimisation',
+      'Internal linking',
+      'Content optimisation',
+      'Local SEO',
+      'SEO performance monitoring',
+    ],
+    intendedCustomers: [
+      'Service businesses and regional contractors looking to capture high-intent local and national search demand',
+      'B2B companies and e-commerce brands seeking compounding organic search acquisition',
+      'Businesses launching a new website or redesign who want technical search foundations built in from day one',
+    ],
+    technicalCapabilities: [
+      'Technical Crawl Audits',
+      'Information Architecture',
+      'On-Page Semantic Markup',
+      'Search Intent Mapping',
+      'Local Search Optimisation',
+      'Search Console Analytics',
+    ],
+    visualType: 'seo-structure',
+  },
+  {
+    id: 'aeo',
+    number: '05',
+    code: '05',
+    slug: 'aeo',
+    title: 'Answer Engine Optimisation (AEO)',
+    shortTitle: 'AEO',
+    category: 'Search & AI Visibility',
+    summary: 'Help structure business information so that it is easier for answer engines to understand and retrieve.',
+    description:
+      'Modern search engines and voice/answer interfaces increasingly extract direct answers rather than simply listing web links. We structure your service pages, FAQs, and schema markup so that answer engines can unambiguously interpret your business capabilities, service areas, and domain expertise.',
+    businessProblem: {
+      headline: 'Unstructured content makes it difficult for answer interfaces to extract accurate business facts.',
+      description:
+        'When prospective customers ask specific operational, pricing, or service-related questions, websites buried in vague marketing prose are bypassed in favour of sources that provide clear, structured, machine-readable answers.',
+      painPoints: [
+        'Important service specifications and customer questions buried in unstructured paragraphs.',
+        'Missing or incomplete Schema.org JSON-LD markup for services, FAQs, and business entities.',
+        'Inconsistent business information across pages that creates ambiguity for automated parsers.',
+      ],
+    },
+    deliverables: [
+      'FAQ optimisation',
+      'Question-based content optimisation',
+      'Structured data and schema markup',
+      'Brand information consistency',
+      'Search intent research',
+      'Content structure improvements',
+    ],
+    intendedCustomers: [
+      'Service businesses and professional practices whose customers ask detailed pre-purchase questions',
+      'E-commerce and technology companies wanting clear specification and FAQ retrieval',
+      'Organisations modernising their content architecture for direct-answer search features',
+    ],
+    technicalCapabilities: [
+      'Schema.org JSON-LD',
+      'FAQPage & Service Schema',
+      'Question-Intent Architecture',
+      'Semantic Heading Hierarchy',
+      'Entity Disambiguation',
+      'Structured Content Formatting',
+    ],
+    visualType: 'aeo-schema',
+  },
+  {
+    id: 'geo',
+    number: '06',
+    code: '06',
+    slug: 'geo',
+    title: 'Generative Engine Optimisation (GEO)',
+    shortTitle: 'GEO',
+    category: 'Search & AI Visibility',
+    summary: 'Help businesses improve their discoverability and brand representation across generative AI search experiences.',
+    description:
+      'Decision-makers increasingly research vendors, compare solutions, and evaluate service providers using generative AI platforms. We audit how your brand and services are represented across generative search interfaces and strengthen your entity clarity, topical depth, and authoritative source signals.',
+    businessProblem: {
+      headline: 'As buyer research shifts toward generative AI, unclear brand entities risk being omitted or misrepresented.',
+      description:
+        'Generative search systems synthesise responses from authoritative, clearly defined entities and comprehensive topic coverage. Businesses with thin topical authority or ambiguous entity definitions are frequently overlooked during AI-assisted vendor evaluation.',
+      painPoints: [
+        'Lack of clarity on how generative AI platforms currently describe or omit your brand.',
+        'Gaps in authoritative topic coverage compared to established industry competitors.',
+        'Weak entity associations between your brand name, core services, and target markets.',
+      ],
+    },
     deliverables: [
       'AI search visibility audits',
-      'Answer-focused content optimisation',
-      'Website crawlability and indexing reviews',
-      'Business and entity information optimisation',
-      'FAQ and service page optimisation',
-      'Relevant structured data implementation',
-      'Competitor visibility analysis',
-      'AI search citation and visibility monitoring',
-      'Reporting and ongoing optimisation'
+      'Brand entity optimisation',
+      'Content authority improvements',
+      'Source and citation opportunity research',
+      'Topic coverage analysis',
+      'Competitor AI visibility analysis',
     ],
-    keyBenefits: [
-      'Structured entity mapping for clear comprehension by generative search parsers',
-      'Answer-first content structure answering the exact questions potential buyers ask AI assistants',
-      'Transparent ongoing monitoring without deceptive claims or false ranking promises'
+    intendedCustomers: [
+      'B2B companies, SaaS providers, and professional agencies evaluated through AI-assisted research',
+      'Regional and international service businesses preparing for conversational search behaviour',
+      'Brands seeking accurate entity representation across modern generative search ecosystems',
     ],
-    idealFor: [
-      'Forward-thinking businesses preparing for the transition from traditional search to AI-synthesized answers',
-      'Initial sales specialisation: HVAC businesses in Texas, USA (with full availability for businesses across industries and countries worldwide)',
-      'Service companies needing clear knowledge graph entities and schema authority'
+    technicalCapabilities: [
+      'AI Visibility Auditing',
+      'Entity Graph Alignment',
+      'Topical Authority Mapping',
+      'Citation Gap Analysis',
+      'Competitor Synthesis Review',
+      'Structured Entity Signals',
     ],
-    toolsUsed: ['Schema.org', 'JSON-LD', 'ChatGPT Search', 'Google AI Overviews', 'Microsoft Bing', 'Crawl Audits'],
-    visualDirection: 'AI search query simulations, entity knowledge graphs, structured data schemas, crawlability reviews.',
-    initialSpecialisation: 'Initial sales specialisation: HVAC businesses in Texas, USA (available to work with businesses across industries and countries worldwide).'
+    ethicalNote:
+      'Transparency Note: Generative AI responses are dynamic and proprietary to each platform. We do not promise guaranteed citations or rankings in any AI platform; our work focuses on verifiable technical structure, entity clarity, and content authority.',
+    visualType: 'geo-entity',
   },
   {
-    id: 'creative-agency',
-    slug: 'creative-agency',
-    title: 'Creative Agency',
-    positioning: 'Create distinctive brand identities and digital experiences.',
-    shortDescription: 'We develop visual identities and creative assets that help businesses communicate consistently, command attention and build enduring equity.',
-    fullDescription: 'In competitive global markets, cohesive design defines perceived value. Our creative studio crafts distinctive brand identity systems, logos, design guidelines, and campaign creative assets that communicate authority and build trust across every touchpoint.',
-    iconName: 'Palette',
+    id: 'website-maintenance',
+    number: '07',
+    code: '07',
+    slug: 'website-maintenance',
+    title: 'Website Maintenance & Technical Support',
+    shortTitle: 'Website Maintenance',
+    category: 'Operations & Support',
+    summary: 'Help businesses maintain reliable and up-to-date websites.',
+    description:
+      'A digital platform requires ongoing technical stewardship after launch. We provide structured website maintenance, security and dependency updates, performance monitoring, backup management, and responsive technical assistance so your team can focus on running the business.',
+    businessProblem: {
+      headline: 'Neglected websites accumulate security vulnerabilities, broken components, and outdated content.',
+      description:
+        'Without dedicated technical maintenance, dependencies become outdated, page speed degrades over time, minor UI bugs go unresolved, and routine content or deployment updates become stressful bottlenecks.',
+      painPoints: [
+        'No reliable technical partner available when bugs, hosting issues, or urgent content changes arise.',
+        'Outdated packages and unmonitored deployments that introduce security or stability risks.',
+        'Gradual performance degradation and unverified backup procedures.',
+      ],
+    },
     deliverables: [
-      'Brand identity development',
-      'Logo and visual identity design',
-      'Brand guidelines',
-      'Graphic design',
-      'Social media creatives',
-      'Advertising creatives',
-      'Digital campaign creatives',
-      'Marketing collateral',
-      'Product creatives',
-      'Creative direction',
-      'Short-form video editing'
+      'Website updates',
+      'Bug fixes',
+      'Security and dependency updates',
+      'Performance monitoring',
+      'Backup management',
+      'Content updates',
+      'Technical assistance',
+      'Hosting and deployment support',
     ],
-    keyBenefits: [
-      'Cohesive visual identity that differentiates your brand from competitors',
-      'Strategic design decisions based on business positioning rather than short-lived fads',
-      'Production-ready vector assets and design tokens ready for immediate deployment'
+    intendedCustomers: [
+      'Businesses without an in-house engineering team that require dependable ongoing web support',
+      'Organisations running active commercial websites or e-commerce stores where uptime and speed are critical',
+      'Clients seeking long-term technical stewardship following a website launch or redesign',
     ],
-    idealFor: [
-      'Companies rebranding to compete at an international standard',
-      'Founders requiring an authoritative, unified visual identity from launch',
-      'Brands requiring creative asset production and visual direction without bloated agency retainers'
+    technicalCapabilities: [
+      'Dependency & Security Patching',
+      'Uptime & Speed Monitoring',
+      'Automated Backup Verification',
+      'CI/CD & Hosting Management',
+      'Scheduled Content Updates',
+      'Priority Bug Resolution',
     ],
-    toolsUsed: ['Figma', 'Adobe Creative Cloud', 'Vector Systems', 'Design Tokens', 'Video Production'],
-    visualDirection: 'Brand identity systems, typography specimens, design tokens, campaign creatives, packaging concepts.'
-  }
+    visualType: 'maintenance-lifecycle',
+  },
 ];
+
+// Map legacy slugs to the current official service slugs so old links never break
+export const legacyServiceSlugMap: Record<string, string> = {
+  'web-development': 'website-development',
+  'aeo-optimisation': 'aeo',
+  'creative-agency': 'website-development',
+};

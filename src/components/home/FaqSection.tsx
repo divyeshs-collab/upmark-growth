@@ -1,90 +1,57 @@
 import React, { useState } from 'react';
 import { faqData } from '../../data/faqData';
-import { ChevronDown, HelpCircle, MessageCircle } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { SectionEyebrow } from '../common/BrandMotifs';
+import { IconPlus, IconMinus } from '../common/Icons';
 
 export const FaqSection: React.FC = () => {
-  const [openId, setOpenId] = useState<number | null>(1); // first item open by default
+  const [openId, setOpenId] = useState<number | null>(1);
 
   const toggle = (id: number) => {
     setOpenId(openId === id ? null : id);
   };
 
   return (
-    <section id="faq" className="py-20 lg:py-28 bg-brandBg">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-electric-50 border border-electric-200 text-xs font-semibold text-electric-700 mb-3">
-            <HelpCircle className="w-3.5 h-3.5 text-electric-500" />
-            <span>Clear Answers &bull; Transparent Policies</span>
-          </div>
-
-          <h2 className="font-heading text-3xl sm:text-4xl font-extrabold text-navy-900 tracking-tight mb-4">
-            Frequently Asked Questions
-          </h2>
-
-          <p className="text-base text-slate-600 leading-relaxed">
-            Everything you need to know about working with UPMARK across our web, AI search, and creative capabilities.
-          </p>
-        </div>
-
-        {/* FAQ Accordion List */}
-        <div className="space-y-3.5">
-          {faqData.map((faq) => {
-            const isOpen = openId === faq.id;
-            return (
-              <div
-                key={faq.id}
-                className="bg-white rounded-2xl border border-slate-200/90 shadow-soft overflow-hidden transition-all duration-200"
-              >
-                <button
-                  type="button"
-                  onClick={() => toggle(faq.id)}
-                  className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-electric-500"
-                >
-                  <span className="font-heading font-bold text-base sm:text-lg text-navy-900">
-                    {faq.question}
-                  </span>
-                  <div
-                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 transition-transform duration-200 ${
-                      isOpen
-                        ? 'bg-electric-500 text-white rotate-180'
-                        : 'bg-slate-100 text-slate-500'
-                    }`}
-                  >
-                    <ChevronDown className="w-4 h-4" />
-                  </div>
-                </button>
-
-                {isOpen && (
-                  <div className="px-5 pb-6 sm:px-6 sm:pb-6 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3 animate-in fade-in duration-200">
-                    {faq.answer}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Have more questions box */}
-        <div className="mt-12 text-center p-6 bg-white rounded-2xl border border-slate-200/90 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-left">
-            <h4 className="font-heading font-bold text-sm text-navy-900">
-              Have a specific question about your project?
-            </h4>
-            <p className="text-xs text-slate-500">
-              Our team responds to all international project enquiries within 1 business day.
+    <section id="faq" className="py-16 lg:py-24 bg-white border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          <div className="lg:col-span-4 space-y-4">
+            <SectionEyebrow label="FAQ" variant="light" />
+            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-[#051329] tracking-[-0.025em] leading-[1.15]">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-base text-slate-600 leading-relaxed">
+              Clear answers regarding our services, technical approach, international collaboration, and search visibility work.
             </p>
           </div>
 
-          <Link
-            to="/contact"
-            className="btn-secondary text-xs py-2.5 px-5 font-semibold shrink-0"
-          >
-            <MessageCircle className="w-3.5 h-3.5" />
-            <span>Contact Our Team</span>
-          </Link>
+          <div className="lg:col-span-8 divide-y divide-slate-200 border-y border-slate-200">
+            {faqData.map((faq) => {
+              const isOpen = openId === faq.id;
+              return (
+                <div key={faq.id} className="py-5">
+                  <button
+                    type="button"
+                    onClick={() => toggle(faq.id)}
+                    aria-expanded={isOpen}
+                    className="w-full text-left flex items-start justify-between gap-6 focus:outline-none"
+                  >
+                    <span className="font-heading font-semibold text-base sm:text-lg text-[#051329]">
+                      {faq.question}
+                    </span>
+                    <span className="w-6 h-6 rounded flex items-center justify-center text-[#0D5BEF] shrink-0 mt-0.5">
+                      {isOpen ? <IconMinus className="w-4 h-4" /> : <IconPlus className="w-4 h-4" />}
+                    </span>
+                  </button>
+
+                  {isOpen && (
+                    <div className="mt-3 pr-8 text-sm sm:text-base text-slate-600 leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

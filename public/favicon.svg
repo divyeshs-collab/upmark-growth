@@ -1,6 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
-  <rect width="48" height="48" rx="10" fill="#0B1F3B"/>
-  <path d="M12 34L22 22L28 27L36 14" stroke="#60A5FA" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M28 14H36V22" stroke="#2563EB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-  <circle cx="36" cy="14" r="2.5" fill="#FFFFFF"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 60" fill="none">
+  <defs>
+    <linearGradient id="upmark-fav-grad" x1="28" y1="60" x2="48" y2="2" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0A52E6" />
+      <stop offset="55%" stop-color="#1E78FF" />
+      <stop offset="100%" stop-color="#3898FF" />
+    </linearGradient>
+  </defs>
+  <path d="M4 17 L18 26.5 L18 57.8 C9.5 55.2 4 47.4 4 37.5 Z" fill="#051329" />
+  <path d="M18 45 L32 33.5 L32 57.8 C27.3 59.3 22.5 59.3 18 57.8 Z" fill="#0D5BEF" />
+  <path d="M22 17 L48 2 L48 37.5 C48 48.2 41.2 55.8 32 57.8 L32 17 Z" fill="url(#upmark-fav-grad)" />
 </svg>

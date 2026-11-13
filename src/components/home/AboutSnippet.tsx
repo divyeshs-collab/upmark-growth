@@ -1,88 +1,47 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Globe, ArrowRight, ShieldCheck, Sparkles, Workflow, MapPin } from 'lucide-react';
+import { SectionEyebrow } from '../common/BrandMotifs';
 
 export const AboutSnippet: React.FC = () => {
+  const metrics = [
+    { value: '07', label: 'Core Digital Services' },
+    { value: '04', label: 'Primary Global Markets' },
+    { value: '100%', label: 'Custom Code Handover' },
+    { value: '24h', label: 'Scope Response Window' },
+  ];
+
   return (
-    <section className="py-20 lg:py-28 bg-navy-950 text-white relative overflow-hidden">
-      {/* Background ambient lighting */}
-      <div className="absolute top-0 right-1/4 w-96 h-96 bg-electric-600/10 rounded-full blur-3xl pointer-events-none"></div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Column (Span 7) */}
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-navy-900 border border-navy-700 text-xs font-semibold text-lightblue-300">
-              <Globe className="w-3.5 h-3.5 text-electric-400" />
-              <span>Global Digital &amp; Creative Studio</span>
-            </div>
-
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-              Built Around Better <br className="hidden sm:inline" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-electric-400 via-lightblue-300 to-white">
-                Digital Experiences.
-              </span>
+    <section className="py-16 lg:py-24 bg-[#F8FAFC] border-b border-slate-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          {/* Left Column (Span 5) */}
+          <div className="lg:col-span-5 space-y-3">
+            <SectionEyebrow label="Introduction" variant="light" />
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-bold text-[#051329] tracking-[-0.025em] leading-[1.18]">
+              Your business deserves more than an online presence.
             </h2>
-
-            <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
-              UPMARK is a digital and creative agency based in Mumbai, India, working with ambitious businesses worldwide.
-            </p>
-
-            <p className="text-sm text-slate-400 leading-relaxed max-w-2xl">
-              We operate without geographical boundaries, partnering with clients across the United States, United Kingdom, Canada, Australia, the United Arab Emirates, and India. Our approach combines practical execution, creative design systems, and business-oriented solutions.
-            </p>
-
-            <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-              <Link
-                to="/about"
-                className="btn-primary py-3.5 px-6 text-sm font-semibold bg-electric-500 hover:bg-electric-600"
-              >
-                <span>Read About Our Approach</span>
-                <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/contact"
-                className="btn-secondary py-3.5 px-6 text-sm font-semibold bg-navy-900 text-white border-navy-700 hover:bg-navy-800"
-              >
-                <span>Start a Project</span>
-              </Link>
-            </div>
           </div>
 
-          {/* Right Column: Values & Global Working Model (Span 5) */}
-          <div className="lg:col-span-5 bg-navy-900/80 rounded-2xl p-7 border border-navy-800 space-y-4">
-            <h3 className="font-heading font-bold text-base text-white mb-2">
-              Our Core Working Model
-            </h3>
-
-            <div className="space-y-3 text-xs text-slate-300">
-              <div className="p-3.5 bg-navy-950/80 rounded-xl border border-navy-800 space-y-1">
-                <span className="text-lightblue-300 font-bold block">1. Global Collaboration</span>
-                <p className="text-slate-400 leading-relaxed">
-                  Remote-first workflows, structured documentation, and overlapping communication windows across international time zones.
-                </p>
-              </div>
-
-              <div className="p-3.5 bg-navy-950/80 rounded-xl border border-navy-800 space-y-1">
-                <span className="text-lightblue-300 font-bold block">2. Practical Execution</span>
-                <p className="text-slate-400 leading-relaxed">
-                  Web Development, AEO Optimisation, and Creative Agency services engineered to reinforce one another with zero bloated overhead.
-                </p>
-              </div>
-
-              <div className="p-3.5 bg-navy-950/80 rounded-xl border border-navy-800 space-y-1">
-                <span className="text-lightblue-300 font-bold block">3. Authentic Engagement</span>
-                <p className="text-slate-400 leading-relaxed">
-                  Zero fabricated metrics or exaggerated guarantees. We provide tailored scopes and realistic, professional execution from Mumbai, India.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-3 bg-navy-950/60 rounded-xl border border-navy-800 text-[11px] text-slate-400 flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-electric-400 shrink-0" />
-              <span>Headquartered in Mumbai, India &bull; Serving clients globally</span>
-            </div>
+          {/* Right Column (Span 7) */}
+          <div className="lg:col-span-7 space-y-4">
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+              At UPMARK, we bring together digital development and search visibility to help businesses create better digital experiences, connect with their customers and operate more effectively.
+            </p>
+            <p className="text-sm sm:text-base text-slate-500 leading-relaxed">
+              We partner with startups, SMEs, service businesses, and e-commerce brands across the US, UK, Canada, and Australia, delivering clean engineering, custom operational tools, and structured search foundations.
+            </p>
           </div>
+        </div>
+
+        {/* Minimal 4-Column Factual Strip */}
+        <div className="pt-8 border-t border-slate-200 grid grid-cols-2 lg:grid-cols-4 gap-6">
+          {metrics.map((item) => (
+            <div key={item.label} className="space-y-1">
+              <div className="font-heading text-2xl sm:text-3xl font-bold text-[#051329]">
+                {item.value}
+              </div>
+              <div className="text-sm text-slate-500">{item.label}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

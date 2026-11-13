@@ -2,50 +2,64 @@ export interface FaqItem {
   id: number;
   question: string;
   answer: string;
-  category: 'Services' | 'Global' | 'Web Development' | 'AEO' | 'Pricing' | 'Process';
+  category: 'General' | 'Development' | 'Search & AI' | 'Operations';
 }
 
 export const faqData: FaqItem[] = [
   {
     id: 1,
-    category: 'Services',
-    question: 'What services does UPMARK offer?',
-    answer: 'UPMARK offers exactly three core disciplines: Web Development (modern business websites, custom web applications, landing pages, and e-commerce platforms), AEO Optimisation (Answer Engine Optimisation to help businesses become accurately understood and discoverable across AI-powered search engines such as ChatGPT, Google AI, and Microsoft Bing), and Creative Agency (brand identity systems, logo design, visual guidelines, advertising creatives, and creative direction).'
+    category: 'General',
+    question: 'What services does UPMARK provide?',
+    answer:
+      'UPMARK provides seven core digital growth and technology services: Website Development, E-commerce Development, Custom Web Applications & Business Dashboards, Search Engine Optimisation (SEO), Answer Engine Optimisation (AEO), Generative Engine Optimisation (GEO), and Website Maintenance & Technical Support.',
   },
   {
     id: 2,
-    category: 'Global',
-    question: 'Does UPMARK work with international clients?',
-    answer: 'Yes. UPMARK is based in Mumbai, India, and works with ambitious businesses worldwide, including clients in the United States, United Kingdom, Canada, Australia, the United Arab Emirates, and India. We manage project communications across overlapping international time zones through clear documentation, video calls, and asynchronous milestones.'
+    category: 'General',
+    question: 'Which markets and types of businesses do you work with?',
+    answer:
+      'We work with international businesses, startups, SMEs, service businesses, and e-commerce brands across the United States, the United Kingdom, Canada, and Australia, as well as other global markets. Our workflows are structured for clear remote collaboration across international time zones.',
   },
   {
     id: 3,
-    category: 'Web Development',
-    question: 'How does the website development process work?',
-    answer: 'Our website development process follows a disciplined five-step framework: Discover (understanding business goals, audience, and technical requirements), Strategise (defining architecture, user flows, and project milestones), Create (UI/UX design, visual prototyping, and content structure), Implement (responsive engineering, performance optimization, and rigorous testing), and Refine (launch verification, handover, and ongoing support where agreed).'
+    category: 'Development',
+    question: 'Do you build custom web applications and internal business dashboards?',
+    answer:
+      'Yes. Beyond public-facing websites and online stores, we engineer custom web applications tailored to business operations, including CRM systems, inventory management portals, sales and purchase tracking systems, booking platforms, and administrative analytics dashboards.',
   },
   {
     id: 4,
-    category: 'AEO',
-    question: 'What is Answer Engine Optimisation?',
-    answer: 'Answer Engine Optimisation (AEO) is the discipline of structuring your technical website data, entity information, and answer-focused content so that generative AI engines (including ChatGPT Search, Google AI search experiences, and Microsoft Copilot) can comprehend, index, and cite your business accurately. We do not guarantee rankings or recommendations, as AI algorithms evolve dynamically; we focus on rigorous technical discoverability and entity clarity.'
+    category: 'Search & AI',
+    question: 'How do SEO, AEO, and GEO differ from one another?',
+    answer:
+      'Search Engine Optimisation (SEO) focuses on technical site health, page hierarchy, and content relevance for traditional organic search results. Answer Engine Optimisation (AEO) structures FAQs, schema markup, and question-based content so answer engines can extract direct facts accurately. Generative Engine Optimisation (GEO) focuses on brand entity clarity, topical authority, and citation readiness across generative AI search platforms.',
   },
   {
     id: 5,
-    category: 'Services',
-    question: 'Can I enquire about multiple services?',
-    answer: 'Yes, absolutely. Many of our international clients engage UPMARK for integrated projects—for example, developing a custom website alongside brand identity creation and an initial AEO technical audit. On our project enquiry form, you can select one, several, or all three disciplines.'
+    category: 'Search & AI',
+    question: 'Do you guarantee rankings or citations in generative AI platforms?',
+    answer:
+      'No. Search algorithms and generative AI synthesis models are proprietary and continuously evolving. We never promise guaranteed rankings or AI citations. Instead, we deliver verifiable technical audits, structured schema implementation, entity alignment, and authoritative content improvements.',
   },
   {
     id: 6,
-    category: 'Pricing',
-    question: 'How is project pricing determined?',
-    answer: 'Every project is different. Our pricing is determined individually based on your specific requirements, project scope, technical complexity, deliverables, and objectives. We provide transparent, itemized proposals in USD or another mutually agreed international currency, with zero hidden fees.'
+    category: 'Development',
+    question: 'Can you redesign an existing website or e-commerce store without losing search visibility?',
+    answer:
+      'Yes. When executing a website or e-commerce redesign, we audit your existing URL structure, metadata, and internal linking beforehand, implement clean redirect mapping where URLs change, and build the new interface with semantic HTML and strong Core Web Vitals performance.',
   },
   {
     id: 7,
-    category: 'Process',
-    question: 'How do I get started?',
-    answer: 'Getting started is straightforward: submit your requirements through our Project Enquiry form or email us at divyesh@upmarkgrowth.com. We will review your project details and respond within 1 business day to discuss scope, timeline, and next steps.'
-  }
+    category: 'Operations',
+    question: 'Do you provide ongoing website maintenance after a project launches?',
+    answer:
+      'Yes. Our Website Maintenance & Technical Support service covers routine dependency and security updates, bug fixes, performance monitoring, backup verification, content updates, and hosting/deployment assistance.',
+  },
+  {
+    id: 8,
+    category: 'General',
+    question: 'How are projects scoped and priced?',
+    answer:
+      'Every project is scoped around your specific business requirements, technical deliverables, and timeline. Following an initial discovery review of your enquiry, we provide a transparent written proposal detailing the exact deliverables, milestones, and investment in USD or your preferred billing currency.',
+  },
 ];
